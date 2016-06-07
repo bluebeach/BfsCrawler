@@ -9,7 +9,7 @@ import org.apache.commons.httpclient.NameValuePair;
 import org.apache.commons.httpclient.methods.PostMethod;
 
 
-//Post·½·¨µÇÂ½Öªºõ£¿£¿£¿
+//Postæ–¹æ³•ç™»é™†çŸ¥ä¹ï¼Ÿï¼Ÿï¼Ÿ
 public class PostDemo {
 
 	public static void main(String[] args){
@@ -18,20 +18,20 @@ public class PostDemo {
 		
 		String url = "http://duirlb1.uir.cn/loginAction.do";
 		PostMethod postMethod = new PostMethod(url);
-		// ÌîÈë¸÷¸ö±íµ¥ÓòµÄÖµ
-		NameValuePair[] data = { new NameValuePair("userName", "20117101"),
-		new NameValuePair("userPass", "wangjun")};
-		// ½«±íµ¥µÄÖµ·ÅÈëpostMethodÖĞ
+		// å¡«å…¥å„ä¸ªè¡¨å•åŸŸçš„å€¼
+		NameValuePair[] data = { new NameValuePair("userName", "xxx"),
+		new NameValuePair("userPass", "xxx")};
+		// å°†è¡¨å•çš„å€¼æ”¾å…¥postMethodä¸­
 		postMethod.addParameters(data);
-		// Ö´ĞĞpostMethod
+		// æ‰§è¡ŒpostMethod
 		int statusCode;
 		try {
 			statusCode = httpClient.executeMethod(postMethod);
-			// HttpClient¶ÔÓÚÒªÇó½ÓÊÜºó¼Ì·şÎñµÄÇëÇó£¬ÏóPOSTºÍPUTµÈ²»ÄÜ×Ô¶¯´¦Àí×ª·¢
-			// 301»òÕß302
+			// HttpClientå¯¹äºè¦æ±‚æ¥å—åç»§æœåŠ¡çš„è¯·æ±‚ï¼Œè±¡POSTå’ŒPUTç­‰ä¸èƒ½è‡ªåŠ¨å¤„ç†è½¬å‘
+			// 301æˆ–è€…302
 			if (statusCode == HttpStatus.SC_MOVED_PERMANENTLY || 
 					statusCode == HttpStatus.SC_MOVED_TEMPORARILY) {
-				// ´ÓÍ·ÖĞÈ¡³ö×ªÏòµÄµØÖ·
+				// ä»å¤´ä¸­å–å‡ºè½¬å‘çš„åœ°å€
 				Header locationHeader = postMethod.getResponseHeader("location");
 				String location = null;
 				if (locationHeader != null) {
@@ -61,12 +61,12 @@ public class PostDemo {
 //		static final String LOGON_SITE = "www.zhihu.com";
 //		static final int LOGON_PORT = 8080;
 
-//		post·½·¨£¬µ«ÊÇÁ¬²»ÉÏ
+//		postæ–¹æ³•ï¼Œä½†æ˜¯è¿ä¸ä¸Š
 //		HttpClient client = new HttpClient();
 //		client.getHostConfiguration().setHost(LOGON_SITE, LOGON_PORT);
 //		PostMethod post = new PostMethod("/login");
-//		NameValuePair email = new NameValuePair("email","wjcj0123@163.com");
-//		NameValuePair password = new NameValuePair("password", "wangjun");
+//		NameValuePair email = new NameValuePair("email","xxx@xxx.com");
+//		NameValuePair password = new NameValuePair("password", "xxx");
 //		NameValuePair rememberme = new NameValuePair("rememberme", "y");
 //		post.setRequestBody(new NameValuePair[]{email,password,rememberme});
 //		int status = 0;
@@ -103,7 +103,7 @@ public class PostDemo {
 //		}
 		
 
-//		Get·½·¨
+//		Getæ–¹æ³•
 //		GetMethod get = new GetMethod("www.zhihu.com");
 //		client.executeMethod(get);
 //		System.out.println(get.getResponseBodyAsString());
